@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Srez.Pages.LoginPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image Source="images/logo.jpg" Aspect="AspectFit"/>
+
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Логин"/>
+                    <Frame BorderColor="Black" Padding="0">
+                        <Entry x:Name="loginEntry"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Пароль"/>
+                    <Frame BorderColor="Black" Padding="0">
+                        <Entry x:Name="passwordEntry" IsPassword="True"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Не зарегистрированы?">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavRegistPageCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Button Text="Войти" Clicked="btnLoginClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
